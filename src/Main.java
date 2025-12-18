@@ -109,6 +109,9 @@ public class Main {
             System.out. println("│  7. 📋 View My Accounts                 │");
             System.out.println("│  8. 👤 View Profile                     │");
             System. out.println("│  9. 🚪 Logout                           │");
+            System.out.println("│  10. 📄 Generate PDF Statement          │");
+            System.out.println("│  11. 📧 Email Statement                 │");
+            System.out.println("│  12. ⚙️  Toggle Email Notifications      │");
             System.out. println("└─────────────────────────────────────────┘");
 
             int choice = getIntInput("Enter your choice: ");
@@ -142,6 +145,22 @@ public class Main {
                     currentUser = null;
                     System.out.println("\n✓ Logged out successfully.");
                     return;
+                case 10:
+                    String accNo = selectAccount();
+                    if (accNo != null) {
+                    PDFService.generateAccountStatement(accNo);
+                    }
+                    break;
+                case 11:
+                    String accNo2 = selectAccount();
+                    if (accNo2 != null) {
+                    accountService.generateStatement(accNo2, true);
+                    }
+                    break;
+    
+                case 12:
+                    EmailService.setEmailEnabled(! EmailService.isEmailEnabled());
+                    break;
                 default:
                     System.out. println("\n⚠ Invalid choice.");
             }
