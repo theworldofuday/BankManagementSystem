@@ -6,11 +6,9 @@ import javax.mail.internet.*;
 
 public class EmailService {
     
-    // ⚠️ IMPORTANT: Replace with your Gmail credentials
-    // Use App Password, not your regular password
-    // Get App Password:  https://myaccount.google.com/apppasswords
     
-    private static final String SENDER_EMAIL = "your. email@gmail.com";      // Change this
+    
+    private static final String SENDER_EMAIL = "tempmail@gmail.com";      // Change this
     private static final String SENDER_PASSWORD = "xxxx xxxx xxxx xxxx";    // 16-char app password
     private static final String BANK_NAME = "Secure Bank";
     
